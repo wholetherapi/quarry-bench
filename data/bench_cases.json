@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "cases": [
+    {"name": "narrow-filter", "sql": "select * from events where kind = 'probe'"},
+    {"name": "hourly-rollup", "sql": "select date_trunc('hour', ts), count(*) from events group by 1"},
+    {"name": "join-calibration", "sql": "select e.* from events e join calibration c on e.instrument = c.instrument"}
+  ]
+}
